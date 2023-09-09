@@ -1,4 +1,4 @@
-import en from './lang/ja'
+import ja from './lang/ja'
 
 export function t(key) {
   const LOCALE_KEY = 'CUSDIS_LOCALE'
