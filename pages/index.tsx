@@ -1,7 +1,6 @@
 import React from 'react'
 import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router'
-import { Footer } from '../components/Footer'
 import { Head } from '../components/Head'
 import { getSession, resolvedConfig, sentry } from '../utils.server'
 import { GetServerSideProps, Redirect } from 'next'
@@ -25,45 +24,6 @@ type Contributer = {
   name: string,
   website?: string
 }
-
-const integrations = [
-  {
-    label: 'Vanilla JS',
-    image: '/images/vanilla.png',
-    imageWidth: 48,
-    link: ''
-  },
-  {
-    label: 'Vue',
-    image: '/images/vue.png',
-    imageWidth: 48,
-    link: 'https://github.com/evillt/vue-cusdis'
-  },
-  {
-    label: 'React',
-    image: '/images/react.png',
-    imageWidth: 80,
-    link: 'https://github.com/Cusdis/sdk/tree/master/packages/react-cusdis'
-  },
-  {
-    label: 'Svelte',
-    image: '/images/svelte.svg',
-    imageWidth: 96,
-    link: '#'
-  },
-  {
-    label: 'Docsify',
-    image: '/images/docsify.svg',
-    imageWidth: 48,
-    link: '/doc#/integration/docsify'
-  },
-  {
-    label: 'Hexo',
-    image: '/images/hexo.svg',
-    imageWidth: 48,
-    link: 'http://blog.cusdis.com/integate-cusdis-in-hexo/'
-  }
-]
 
 function IndexPage({ session }: Props) {
   const router = useRouter()
@@ -253,10 +213,6 @@ function IndexPage({ session }: Props) {
             <Button component="a" href="/dashboard" target={'_blank'}>無料で始める</Button>
           </Stack>
         </Flex>
-      </Box>
-
-      <Box my={96}>
-        <Footer maxWidth="3xl" />
       </Box>
     </Box>
   )
