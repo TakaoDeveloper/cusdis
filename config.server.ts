@@ -14,14 +14,14 @@ if (resolvedConfig.useLocalAuth) {
       name: 'Username',
       credentials: {
         username: {
-          label: 'Username',
+          label: 'ユーザー名',
           type: 'text',
-          placeholder: 'env: USERNAME',
+          placeholder: 'User',
         },
         password: {
-          label: 'Password',
+          label: 'パスワード',
           type: 'password',
-          placeholder: 'env: PASSWORD',
+          placeholder: 'Password',
         },
       },
       async authorize(credentials: { username: string; password: string }) {

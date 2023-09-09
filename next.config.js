@@ -6,5 +6,18 @@ module.exports = {
         destination: '/doc/index.html'
       }
     ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          }
+        ]
+      }
+    ]
   }
 }

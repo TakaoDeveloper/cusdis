@@ -68,7 +68,7 @@ export default async function handler(
     // check usage
     if (!await subscriptionService.quickApproveValidate(tokenBody.owner.id)) {
       res.status(402).json({
-        error: `You have reached the maximum number of Quick Approve on free plan (${usageLimitation.quick_approve}/month). Please upgrade to Pro plan to use Quick Approve more.`
+        error: `無料プランのクイック承認数が上限に達しました(${usageLimitation.quick_approve}/month)。Quick Approveをもっと使いたい場合は、Proプランにアップグレードしてください。`
       })
       return
     }

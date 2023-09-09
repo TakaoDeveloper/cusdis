@@ -1,38 +1,30 @@
 # Webhook
 
-In addition to get new comment notification from Email, we also provide Webhook. 
+メールによる新着コメント通知の他に、Webhookも提供しています。
 
-## Enable
+## 有効にする
 
-To enable webhook for project, in `Project` -> `Settings`, save your webhook url and turn on the switch button.
+プロジェクトのWebhookを有効にするには、`Project`->`Settings`でWebhookのURLを保存し、トグルスイッチをオンにします。
 
 ![](../images/enable_webhook.png ':size=500')
 
-## Reference
+## リファレンス
 
-### New comment
+### 新しいコメント
 
-When new comment comes in, Cusdis will make a `POST` request to your webhook, with below data:
+新しいコメントが入力されると、Cusdisはあなたのwebhookに`POST`リクエストを送信します：
 
 ```js
 {
-  "type": "new_comment",
+  "type": "type": "new_comment",
   "data": {
     "by_nickname": "xxx",
-    "by_email": "xxx",
+    "by_email": "xxx": "xxx",
     "content": "xxx",
     "page_id": "xxx",
-    "page_title": "xxx", // page title, maybe NULL
-    "project_title": "haha", // project title
-    "approve_link": "" // use this link to approve this comment without login
+    "page_title": "xxx", // ページタイトル。
+    "project_title": "haha", // プロジェクトのタイトル
+    "approve_link": "" // ログインせずにこのコメントを承認するにはこのリンクを使う
   }
 }
 ```
-
-## Official Telegram bot
-
-We also provide an official Telegram bot to send notification to you, with the power of Webhook: 
-
-1. Open and start bot https://t.me/CusdisBot
-2. send `/gethook` command
-3. Copy the URL result and paste in Cusdis project's webhook settings

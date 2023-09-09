@@ -38,8 +38,8 @@ function ApprovePage(props: {
   const appendReplyMutation = useMutation(appendReply, {
     onSuccess() {
       notifications.show({
-        title: 'Success',
-        message: 'Reply appended',
+        title: '成功',
+        message: '返信を追加しました',
         color: 'green'
       })
       setReplyContent('')
@@ -51,7 +51,7 @@ function ApprovePage(props: {
       } = data.response.data
 
       notifications.show({
-        title: "Error",
+        title: "エラー",
         message,
         color: 'yellow'
       })
@@ -60,8 +60,8 @@ function ApprovePage(props: {
   const approveCommentMutation = useMutation(approveComment, {
     onSuccess() {
       notifications.show({
-        title: 'Success',
-        message: 'Reply appended',
+        title: '成功',
+        message: '返信を追加しました',
         color: 'green'
       })
 
@@ -74,7 +74,7 @@ function ApprovePage(props: {
       } = data.response.data
 
       notifications.show({
-        title: "Error",
+        title: "エラー",
         message,
         color: 'yellow'
       })
@@ -83,7 +83,7 @@ function ApprovePage(props: {
 
   return (
     <>
-      <Head title="New comment - Cusdis" />
+      <Head title="新しいコメント - Cusdis" />
       <Container mt={12} my={12}>
         <Stack>
           <Title mb={12}>
@@ -102,12 +102,12 @@ function ApprovePage(props: {
 
           <Box>
             {
-              props.comment.approved ? <Button disabled>Approved</Button> : <Button onClick={_ => {
+              props.comment.approved ? <Button disabled>承認</Button> : <Button onClick={_ => {
                 approveCommentMutation.mutate({
                   token: router.query.token as string
                 })
               }} loading={approveCommentMutation.isLoading} color="telegram">
-                Approve
+                承認
               </Button>
             }
           </Box>
@@ -116,14 +116,14 @@ function ApprovePage(props: {
 
           <Stack>
             <Textarea placeholder="Your comment..." value={replyContent} onChange={e => setReplyContent(e.target.value)}></Textarea>
-            <Text size="sm" color="gray">* Appending reply to a comment will automatically approve the comment</Text>
+            <Text size="sm" color="gray">* コメントへの返信を追加すると、コメントは自動的に承認されます。</Text>
 
             <Button onClick={_ => {
               appendReplyMutation.mutate({
                 token: router.query.token as string,
                 replyContent
               })
-            }} loading={appendReplyMutation.isLoading} mt={4}>Append reply</Button>
+            }} loading={appendReplyMutation.isLoading} mt={4}>返信を追加する</Button>
           </Stack>
 
         </Stack>

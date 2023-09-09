@@ -3,9 +3,9 @@ import en from './lang/en'
 export function t(key) {
   const LOCALE_KEY = 'CUSDIS_LOCALE'
 
-  const locale = window[LOCALE_KEY] || en
+  const locale = window[LOCALE_KEY] || ja
 
-  const content = locale[key] || en[key]
+  const content = locale[key] || ja[key]
   if (!locale[key]) {
     console.warn(
       '[cusdis]',

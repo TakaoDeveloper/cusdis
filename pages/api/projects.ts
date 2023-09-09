@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!await subscriptionService.createProjectValidate(session.uid)) {
     // if (true) {
       res.status(402).json({
-        error: 'You have reached the maximum number of sites on free plan. Please upgrade to Pro plan to create more sites.'
+        error: '無料プランのサイト数が上限に達しました。より多くのサイトを作成するには、プロプランにアップグレードしてください。'
       })
       return
     }

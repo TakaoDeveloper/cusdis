@@ -1,33 +1,33 @@
-# Contributing to Cusdis
+# Cusdisへの貢献
 
-Thanks for taking time to contribute!
+時間を割いていただきありがとうございます！
 
-This guide help you know everything about how to run Cusdis on your local machine and start developing.
+このガイドを読めば、Cusdisをローカルマシンで動かして開発を始める方法がすべてわかります。
 
-## Start dev server
+## 開発サーバーの起動
 
-Firstly, create a `.env` file:
+まず、`.env`ファイルを作成します：
 
 ```shell
 DB_URL=file:./db.sqlite
 USERNAME=admin
-PASSWORD=password
+PASSWORD=パスワード
 JWT_SECRET=ofcourseistillloveyou
 ```
 
 ```bash
-# install dependencies
+# 依存関係をインストールする
 $ yarn
 
-# start dev server
+# 開発サーバーを起動する
 $ yarn dev
 ```
 
-Now open http://localhost:3000 and signin with `admin` and `password`
+http://localhost:3000 を開き、`admin`と`password`でサインインする。
 
-### Using PostgreSQL
+### PostgreSQL を使う
 
-`yarn dev` is using SQLite by default. If you want to develop with PostgreSQL, first change `DB_URL` in `.env` to your db connection url:
+`yarn dev`はデフォルトでSQLiteを使用しています。PostgreSQLで開発したい場合は、まず`.env`の`DB_URL`をあなたのDB接続URLに変更してください：
 
 ```shell
 # .env
@@ -35,23 +35,22 @@ DB_URL=postgres://xxx
 ...
 ```
 
-Then use `yarn dev:pg` to start the dev server.
+それから`yarn dev:pg`を使用して開発サーバを起動します。
 
-## Developing widget
+## 開発ウィジェット
 
 ```bash
-$ yarn widget
+yarn widget
 ```
 
-The widget demo will run on http://localhost:3001
+ウィジェットのデモは http://localhost:3001 で動作します。
 
-Change the attributes of the widget in `widget/index.html` (Don't commit this file if you only modify something for testing).
+`widget/index.html`のウィジェットの属性を変更する。(テスト用に何かを変更するだけなら、このファイルをコミットしないでください)
 
-## Modify schema
+## スキーマの変更
 
-Database schema is defined in `prisma/$DB_TYPE/schema.prisma`.
+データベーススキーマは`prisma/$DB_TYPE/schema.prisma`で定義される。
 
-### Generate database migrations
+### データベースの移行を生成する
 
-In general, you don't need to generate migration when contribute a new feature. Create a PR and the core team member will do this for you.
-
+一般的に、新機能を投稿する際にマイグレーションを生成する必要はありません。PRを作成すれば、コアチームのメンバーがマイグレーションを行ってくれます。

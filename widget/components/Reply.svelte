@@ -28,6 +28,11 @@
       return
     }
 
+    if (!email) {
+      alert(t('email_is_required'))
+      return
+    }
+
     try {
       loading = true
       const res = await api.post('/api/open/comments', {

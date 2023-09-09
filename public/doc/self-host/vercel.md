@@ -1,25 +1,25 @@
 # Vercel
 
-Since Cusdis itself is built with Next.js, you can deploy your own Cusdis on Vercel in just one click!
+Cusdis自体はNext.jsでビルドされているので、ワンクリックでVercelにデプロイできます。
 
-> Before deploying on Vercel, make sure you had have a connectable PostgreSQL connection url (like `postgresql://johndoe:randompassword@localhost:5432/mydb`)
+> Vercelにデプロイする前に、接続可能なPostgreSQL接続URL(例:`postgresql://johndoe:randompassword@localhost:5432/mydb`)があることを確認してください。
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fdjyde%2Fcusdis&env=USERNAME,PASSWORD,DB_URL,JWT_SECRET&envDescription=Environment%20variables%20reference&envLink=https%3A%2F%2Fcusdis.com%2Fdoc)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdjyde%2Fcusdis&env=USERNAME,PASSWORD,DB_URL,JWT_SECRET&envDescription=Environment%20variables%20reference&envLink=https%3A%2F%2Fcusdis.com%2Fdoc)
 
-After the initial deploying success, get your production deployment domain (like `https://foo.vercel.app`), then set `NEXTAUTH_URL` environment variable to this domain:
+最初のデプロイが成功したら、本番デプロイのドメイン(`https://foo.vercel.app`など)を取得し、環境変数`NEXTAUTH_URL`をこのドメインに設定します。
 
 ![](../images/y3FkAY.png ':size=800')
 
-Then redeploy the application:
+それからアプリケーションを再デプロイします
 
 ![](../images/redeploy.png ':size=400')
 
 
-> Remember when you change the domain, you need to change `NEXTAUTH_URL` too.
+> ドメインを変更したら、`NEXTAUTH_URL`も変更してください。
 
-## Environment Variables reference
+## 環境変数の参照
 
-- `USERNAME` username to sign in
-- `PASSWORD` password to sign in
-- `DB_URL` valid postgresql connection url (like `postgresql://johndoe:randompassword@localhost:5432/mydb`)
-- `JWT_SECRET` secret key to sign jwt token. Set whatever you want.
+- `USERNAME` サインインするユーザー名
+- `PASSWORD` ログインするためのパスワード
+- `DB_URL` 有効な postgresql 接続 URL (例:`postgresql://johndoe:randompassword@localhost:5432/mydb`)
+- `JWT_SECRET` jwt トークンに署名するための秘密鍵。好きなように設定する。

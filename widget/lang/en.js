@@ -1,4 +1,4 @@
-export default {
+window.CUSDIS_LOCALE = {
   powered_by: 'Comments powered by Cusdis',
   post_comment: 'Comment',
   loading: 'Loading',
@@ -14,7 +14,7 @@ export default {
   mod_badge: 'MOD',
   content_is_required: 'Content is required',
   nickname_is_required: 'Nickname is required',
+  email_is_required: 'Email is required',
 
-  comment_has_been_sent:
-    'Your comment has been sent. Please wait for approval.',
+  comment_has_been_sent: 'Your comment has been sent. Please wait for approval.',
 }

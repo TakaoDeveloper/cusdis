@@ -62,15 +62,15 @@ export function MainLayout(props: {
   }, {
     onSuccess() {
       notifications.show({
-        title: 'Success',
-        message: 'Downgrade success',
+        title: '成功',
+        message: 'ダウングレードに成功しました',
         color: 'green'
       })
     },
     onError() {
       notifications.show({
-        title: 'Error',
-        message: 'Something went wrong, please contact hi@cusdis.com',
+        title: 'エラー',
+        message: '問題が発生しました',
         color: 'red'
       })
     }

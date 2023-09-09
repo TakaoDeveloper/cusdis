@@ -13,9 +13,9 @@ function ErrorPage({
   const info = (() => {
     switch (errorCode) {
       case ErrorCode.INVALID_TOKEN:
-        return <Text>Invalid Token</Text>
+        return <Text>無効なトークン</Text>
       default:
-        return <Text>Something went wrong</Text>
+        return <Text>問題が発生しました</Text>
     }
   })()
 

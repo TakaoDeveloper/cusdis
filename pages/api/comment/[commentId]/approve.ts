@@ -30,7 +30,7 @@ export default async function handler(
     if (!await subscriptionService.approveCommentValidate(session.uid)) {
       res.status(402).json({
         error:
-          `You have reached the maximum number of approving comments on free plan (${usageLimitation['approve_comment']}/month). Please upgrade to Pro plan to approve more comments.`,
+          `無料プランのコメント承認数が上限に達しました（${usageLimitation['approve_comment']}/月）。より多くのコメントを承認するには、Proプランにアップグレードしてください。`,
       })
       return
     }

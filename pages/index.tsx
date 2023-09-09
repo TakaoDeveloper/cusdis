@@ -74,7 +74,7 @@ function IndexPage({ session }: Props) {
       onClick={() => router.push('/dashboard')}
       color="gray.700"
     >
-      Dashboard
+      ダッシュボード
     </Button>
   ) : (
     <Button
@@ -82,13 +82,13 @@ function IndexPage({ session }: Props) {
         signIn(null, { callbackUrl: `${location.origin}/dashboard` })
       }
     >
-      Start for free
+      無料で始める
     </Button>
   )
 
   return (
     <Box className="">
-      <Head title="Cusdis - Lightweight, privacy-first, open-source comment system" />
+      <Head title="Cusdis - 軽量で、プライバシー重視の、オープンソースコメントシステム" />
       <NextHead>
         {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" /> */}
@@ -106,7 +106,7 @@ function IndexPage({ session }: Props) {
               {/* <Text>for your blog</Text> */}
             </Box>
             <Text color="gray">
-              <strong>Cusdis</strong> is an open-source, lightweight, privacy-first <strong>alternative to Disqus</strong>. It's super easy to use and integrate with your existing website. We don't track you and your users.
+              <strong>Cusdis</strong> はオープンソースで、軽量(~5KB)でプライバシー重視の <strong>Discusの代替ツール</strong> 使い方はとても簡単で、既存のウェブサイトと統合することができます。私たちはあなたとあなたのユーザーを追跡しません。
             </Text>
           </Stack>
           <Center>
@@ -115,10 +115,10 @@ function IndexPage({ session }: Props) {
                 {StartButton}
 
                 <Button variant={'outline'} component='a' target={'_blank'} href="/doc">
-                  Documentation
+                ドキュメント
                 </Button>
 
-                <Anchor href="#pricing" weight={500}>Pricing</Anchor>
+                <Anchor href="#pricing" weight={500}>価格</Anchor>
 
                 {/* <Anchor weight={500}>Pricing</Anchor> */}
               </Group>
@@ -129,7 +129,7 @@ function IndexPage({ session }: Props) {
             <Image src="/images/intro-dashboard-2.png" />
           </Stack>
 
-          <Title order={1} my={96} align='center'>Features</Title>
+          <Title order={1} my={96} align='center'>特徴</Title>
 
           <Grid gutter={64}>
             <Grid.Col span={6}>
@@ -137,10 +137,10 @@ function IndexPage({ session }: Props) {
                 <Image src="/images/intro-widget.png" w="100%" />
                 <Stack spacing={8}>
                   <Title order={4}>
-                    Lightweight
+                  軽量
                   </Title>
                   <Text>
-                    The JS SDK embedded to your website is only around 5kb (gzipped). It has built-in i18n, dark-mode.
+                  ウェブサイトに埋め込むJavaScript SDKはわずか5KBです。 i18n、ダークモードを内蔵しています。
                   </Text>
                 </Stack>
               </Stack>
@@ -151,10 +151,10 @@ function IndexPage({ session }: Props) {
                 <Image src="/images/intro-email.png" w="100%" />
                 <Stack spacing={8}>
                   <Title order={4}>
-                    Email Notification
+                    メール通知
                   </Title>
                   <Text>
-                    You will receive Email notification when a new comment comes in, and do a Quick Approve.
+                    新しいコメントが投稿されるとメールで通知され、クイック承認ができます。
                   </Text>
                 </Stack>
               </Stack>
@@ -165,10 +165,10 @@ function IndexPage({ session }: Props) {
                 <Image src="/images/intro-approval.png" w="100%" />
                 <Stack spacing={8}>
                   <Title order={4}>
-                    Quick Approve
+                    クイック承認
                   </Title>
                   <Text>
-                    In the notification email and webhook, you will get a short-time link to approve/reply the new comment without login to dashboard. All the things get done in your mobile.
+                    通知メールとウェブフックには、ダッシュボードにログインせずに新しいコメントを承認/返信するためのリンクが短時間で表示されます。すべての作業はモバイルで行えます。
                   </Text>
                 </Stack>
               </Stack>
@@ -182,11 +182,11 @@ function IndexPage({ session }: Props) {
                     Webhook
                   </Title>
                   <Text>
-                    You can set a Webhook URL that will be triggered when your websites have new comment. Integrate Cusdis with your favorite tools such as Telegram.
+                  Webhook URLを設定することで、ウェブサイトに新着コメントがあった際にトリガーされます。
                   </Text>
                   <Anchor href="/doc#/advanced/webhook" sx={{
                     textDecoration: 'underline'
-                  }}>How to use Webhook</Anchor>
+                  }}>Webhookの使い方</Anchor>
                 </Stack>
               </Stack>
             </Grid.Col>
@@ -194,7 +194,7 @@ function IndexPage({ session }: Props) {
           </Grid>
 
           <Title order={1} align='center' my={96}>
-            Integrate with frameworks and platforms with ease
+            フレームワークやプラットフォームと簡単に統合
           </Title>
         </Stack>
       </Container>
@@ -221,7 +221,7 @@ function IndexPage({ session }: Props) {
       </Stack>
 
       <Box>
-        <Title id="pricing" order={1} align='center' my={96}>Pricing</Title>
+        <Title id="pricing" order={1} align='center' my={96}>価格</Title>
         <Flex
           gap="lg"
           justify={'center'}
@@ -231,15 +231,15 @@ function IndexPage({ session }: Props) {
             padding: 24,
             borderRadius: 12
           }} >
-            <Title order={3}>Self Host</Title>
+            <Title order={3}>自己ホスト</Title>
             <Box>
-              <Badge>FREE</Badge>
+              <Badge>無料</Badge>
             </Box>
             <List listStyleType={'none'} sx={{
             }} size="sm">
-              <List.Item>All features. But host on your own server and database.</List.Item>
+              <List.Item>すべての機能。しかし、あなた自身のサーバーとデータベース上でホストしています。</List.Item>
             </List>
-            <Button component="a" href="/doc" target={'_blank'}>Documentation</Button>
+            <Button component="a" href="/doc" target={'_blank'}>ドキュメント</Button>
           </Stack>
 
           <Stack sx={{
@@ -247,17 +247,17 @@ function IndexPage({ session }: Props) {
             padding: 24,
             borderRadius: 12
           }}>
-            <Title order={3}>Cloud</Title>
+            <Title order={3}>クラウド</Title>
             <Box>
-              <Badge>FREE</Badge>
+              <Badge>無料</Badge>
             </Box>
             <List sx={{
             }} size="sm">
-              <List.Item>{usageLimitation['create_site']} site</List.Item>
-              <List.Item>{usageLimitation['approve_comment']} approved comments / month</List.Item>
-              <List.Item>{usageLimitation['quick_approve']} Quick Approve / month</List.Item>
+              <List.Item>{usageLimitation['create_site']} サイト</List.Item>
+              <List.Item>{usageLimitation['approve_comment']} 承認コメント／月</List.Item>
+              <List.Item>{usageLimitation['quick_approve']} クイック承認／月</List.Item>
             </List>
-            <Button component="a" href="/dashboard" target={'_blank'}>Start for free</Button>
+            <Button component="a" href="/dashboard" target={'_blank'}>無料で始める</Button>
           </Stack>
 
           <Stack sx={{
@@ -265,17 +265,17 @@ function IndexPage({ session }: Props) {
             padding: 24,
             borderRadius: 12
           }}>
-            <Title order={3}>Cloud Pro</Title>
+            <Title order={3}>クラウドプロ</Title>
             <Box>
-              <Badge>$5 / month</Badge>
+              <Badge>5ドル／月</Badge>
             </Box>
             <List sx={{
             }} size="sm">
-              <List.Item>Unlimited sites</List.Item>
-              <List.Item>Unlimited approved comments</List.Item>
-              <List.Item>Unlimited Quick Approve</List.Item>
+              <List.Item>サイト数無制限</List.Item>
+              <List.Item>承認コメント無制限</List.Item>
+              <List.Item>クイック承認無制限</List.Item>
             </List>
-            <Button component="a" href="/dashboard" target={'_blank'}>Start for free</Button>
+            <Button component="a" href="/dashboard" target={'_blank'}>無料で始める</Button>
           </Stack>
         </Flex>
       </Box>

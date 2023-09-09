@@ -55,15 +55,15 @@ export default function Page(props: {
 
   const successCallback = React.useCallback(() => {
     notifications.show({
-      title: 'Saved',
-      message: 'Settings saved',
+      title: '保存済み',
+      message: '設定が保存されました',
       color: 'green'
     })
   }, [])
   const failCallback = React.useCallback(() => {
     notifications.show({
-      title: 'Failed',
-      message: 'Something went wrong',
+      title: '失敗',
+      message: '問題が発生しました',
       color: 'red'
     })
   }, [])
@@ -96,8 +96,8 @@ export default function Page(props: {
 
     if (!validUrlRegexp.exec(value)) {
       notifications.show({
-        title: 'Not a valid http/https URL',
-        message: 'Please enter a valid http/https URL',
+        title: '有効なURLではありません',
+        message: '有効なhttp/https URLを入力してください',
         color: 'red'
       })
       return
@@ -118,12 +118,12 @@ export default function Page(props: {
       }}>
         <Title sx={{
           marginBottom: 12
-        }} order={3}>Settings</Title> 
+        }} order={3}>設定</Title> 
         <Stack className={listClasses.container} spacing={0}>
           <Box className={listClasses.item}>
             <Group>
               <Text className={listClasses.label}>
-                Email Notification
+                メール通知
               </Text>
               <Switch defaultChecked={props.project.enableNotification} onChange={e => {
                 enableNotificationMutation.mutate({
@@ -153,7 +153,7 @@ export default function Page(props: {
               <Group grow>
                 <TextInput defaultValue={props.project.webhook} ref={webhookInputRef} placeholder="https://..." />
                 <Box>
-                  <Button onClick={onSaveWebhookUrl}>Save</Button>
+                  <Button onClick={onSaveWebhookUrl}>保存</Button>
                 </Box>
               </Group>
             </Stack>

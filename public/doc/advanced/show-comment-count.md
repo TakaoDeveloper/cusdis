@@ -1,27 +1,27 @@
-# Show comment count
+# コメント数の表示
 
-Sometimes you want to show the comments count of a page. You can put `js/cusdis-count.umd.js` on the bottom of `<body>`. And add the attribute `data-cusdis-count-page-id="{{ PAGE ID }}"` in the elements which you want to display count number.
+ページのコメント数を表示したいときは、`js/cusdis-count.umd.js`を`<body>`の一番下に記述する。そして、コメント数を表示したい要素に`data-cusdis-count-page-id="{{ PAGE ID }}"`という属性を追加します。
 
 ```html
 <body>
   <div>
-    <h1>Post Title</h1>
-    <span data-cusdis-count-page-id="{{ PAGE_ID }}">0</span> comments
+    <h1>タイトル</h1>
+    <span data-cusdis-count-page-id="{{ PAGE_ID }}">0</span>コメント
   </div>
   <script defer data-host="https://cusdis.com" data-app-id="{{ APP_ID }}" src="https://cusdis.com/js/cusdis-count.umd.js"></script>
 </body>
 ```
 
-This script will collect all `data-cusdis-count-page-id` in current page and fetch the comments count. Then replace the count number to the element.
+このスクリプトは現在のページ内のすべての`data-cusdis-count-page-id`を収集し、コメント数を取得します。そして、そのカウント数を要素に置き換えます。
 
-!> Don't forget to change `https://cusdis.com` to your own domain if you are using self-host version.
+セルフホスト版を使用している場合は、`https://cusdis.com`を自分のドメインに変更してください。
 
-?> If there are more than one element with `data-cusdis-count-page-id`, the script will batch the query in one.
+もし`data-cusdis-count-page-id`を持つ要素が複数ある場合、スクリプトはクエリを1つにまとめます。
 
 ## API
 
-This UMD script expose `CUSDIS_COUNT` on `window` object.
+このUMDスクリプトは`window`オブジェクトに対して`CUSDIS_COUNT`を公開します。
 
-### window.CUSDIS_COUNT.initial()
+## window.CUSDIS_COUNT.initial()
 
-Manually update the count in the page.
+ページ内のカウントを手動で更新します。

@@ -78,7 +78,7 @@ function CommentToolbar(props: {
       } = data.response.data
 
       notifications.show({
-        title: "Error",
+        title: "エラー",
         message,
         color: 'yellow'
       })
@@ -101,32 +101,32 @@ function CommentToolbar(props: {
       <Group spacing={4}>
         {props.comment.approved ? (
           <Button leftIcon={<AiOutlineCheck />} color="green" size="xs" variant={'light'}>
-            Approved
+            承認
           </Button>
         ) : (
           <Button loading={approveCommentMutation.isLoading} onClick={_ => {
-            if (window.confirm("Are you sure you want to approve this comment?")) {
+            if (window.confirm("このコメントを承認しますか？")) {
               approveCommentMutation.mutate({
                 commentId: props.comment.id
               })
             }
           }} leftIcon={<AiOutlineSmile />} size="xs" variant={'subtle'}>
-            Approve
+            承認
           </Button>
         )}
         <Button onClick={_ => {
           setIsOpenReplyForm(!isOpenReplyForm)
         }} size="xs" variant={'subtle'}>
-          Reply
+          返信
         </Button>
         <Button loading={deleteCommentMutation.isLoading} onClick={_ => {
-          if (window.confirm("Are you sure you want to delete this comment?")) {
+          if (window.confirm("このコメントを削除しますか？")) {
             deleteCommentMutation.mutate({
               commentId: props.comment.id
             })
           }
         }} color="red" size="xs" variant={'subtle'}>
-          Delete
+          削除
         </Button>
       </Group>
       {
@@ -136,7 +136,7 @@ function CommentToolbar(props: {
             autosize
             minRows={2}
             onChange={e => setReplyContent(e.currentTarget.value)}
-            placeholder="Reply as moderator"
+            placeholder="モデレーターとして返信する"
             sx={{
               // width: 512,
               // maxWidth: '100%'
@@ -146,7 +146,7 @@ function CommentToolbar(props: {
               parentId: props.comment.id,
               content: replyContent
             })
-          }} disabled={replyContent.length === 0} size="xs">Reply and approve</Button>
+          }} disabled={replyContent.length === 0} size="xs">返信および承認</Button>
         </Stack>
       }
     </Stack>
@@ -166,7 +166,7 @@ function ProjectPage(props: {
   }, [!props.session])
 
   if (!props.session) {
-    return <div>Redirecting to signin..</div>
+    return <div>ログイン画面へのリダイレクト中</div>
   }
 
   const [page, setPage] = React.useState(1)
@@ -242,7 +242,7 @@ function ProjectPage(props: {
             }}>
               <Center>
                 <Text color="gray" size="sm">
-                  No comments yet
+                コメントがありません
                 </Text>
               </Center>
             </Box>

@@ -32,8 +32,8 @@ function GettingStart() {
       {
         onSuccess(data) {
           notifications.show({
-            title: "Project created",
-            message: "Redirecting to project dashboard",
+            title: "プロジェクトが作成されました",
+            message: "ダッシュボードへのリダイレクトしています",
             color: 'green'
           })
           router.push(`/dashboard/project/${data.data.id}`, null, {
@@ -47,7 +47,7 @@ function GettingStart() {
           } = data.response.data
 
           notifications.show({
-            title: "Error",
+            title: "エラー",
             message,
             color: 'yellow'
           })

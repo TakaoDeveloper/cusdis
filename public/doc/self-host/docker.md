@@ -13,46 +13,47 @@ docker run \
   djyde/cusdis
 ```
 
-> Remember to change the `http://IP_ADDRESS_OR_DOMAIN` to your machine host or domain
+> `http://IP_ADDRESS_OR_DOMAIN`を自分のマシンのホストまたはドメインに変更してください。
 
-Then visit `http://IP_ADDRESS_OR_DOMAIN`
+次に`http://IP_ADDRESS_OR_DOMAIN`にアクセスします。
 
-## Env
+## 環境変数
 
-- `USERNAME` (required) username to login
-- `PASSWORD` (required) password to login
-- `DB_URL` (required) where to store your data
-  - If you use SQLite, must have a `file:` prefix, like `file:/data/db.sqlite`
-  - If you use pgsql, set it to your pgsql connection url
-  - If you use mysql, set it to your mysql connection url
-- `NEXTAUTH_URL` (required) your machine host (IP address or domain like `https://foo.com`)
-- `HOST` your machine host (IP address or domain like `https://foo.com`), default will be `https://cusdis.com`. It affects the redirect address of the approval link.
-- `JWT_SECRET` jwt secret
+- `USERNAME` (必須) ログインするためのユーザ名
+- `PASSWORD` (必須) ログイン時のパスワード
+- `DB_URL` (必須) データを保存する場所。
+  - SQLiteを使用する場合は、`file:/data/db.sqlite`のように`file:`というプレフィックスを付けます。
+  - pgsqlを使用している場合は、pgsqlの接続URLを設定します。
+  - mysqlを使用している場合は、mysqlの接続URLを指定します。
+- `NEXTAUTH_URL` (必須) マシンのホスト名 (IPアドレスまたは`https://foo.com`のようなドメイン名)。
+- `HOST` (デフォルト:`https://cusdis.com`) ホスト(`https://foo.com` のようなIPアドレスまたはドメイン)を入力します。　承認リンクのリダイレクトアドレスに影響します。
+- `JWT_SECRET` JWTのシークレット
 - `DB_TYPE`
-  - `sqlite` (default)
+  - `sqlite` (デフォルト)
   - `pgsql`
   - `mysql`
 
-### PostgreSQL (optional)
+### PostgreSQL (オプション)
 
-You can connect Cusdis to an exist pgsql instead of SQLite:
+SQLiteの代わりに既存のpgsqlにCusdisを接続することができる：
 
 ```bash
-docker run \
+docker run
   -d \
-  -e USERNAME=djyde \
+  -e USERNAME=djyde  \
   -e PASSWORD=password \
-  -e JWT_SECRET=ofcourseistillloveyou \
-  -e DB_TYPE=pgsql
+  -e JWT_SECRET=ofcourseistillloveyou  \
+  -e DB_TYPE=pgsql \
   -e DB_URL=YOUR_PGSQL_URL \
-  -e NEXTAUTH_URL=http://IP_ADDRESS_OR_DOMAIN \
+  -e NEXTAUTH_URL=http://IP_ADDRESS_OR_DOMAIN  \
   -p 3000:3000 \
   djyde/cusdis
 ```
 
-Or you can use `docker compose` to use a new pgsql.
+または、`docker compose`を使用して新しいpgsqlを使用することもできます。
 
-Create a `docker-compose.yaml`:
+`docker-compose.yaml`を作成してください：
+
 
 ```yml
 version: "3.9"
@@ -78,7 +79,6 @@ services:
       - POSTGRES_PASSWORD=password
 ```
 
-> Remember to change the `http://IP_ADDRESS_OR_DOMAIN` to your machine host or domain
+> `http://IP_ADDRESS_OR_DOMAIN`を自分のマシンのIPアドレスまたはドメインに変更してください。
 
-Then run `docker-compose up`
-
+次に`docker-compose up`を実行する。

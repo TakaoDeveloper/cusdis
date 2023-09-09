@@ -1,6 +1,6 @@
 # FAQ
 
-## What if I delete a project?
+## もしプロジェクトを削除したら？
 
-1. You won't see the project in dashboard
-2. Comment widget using this project's id won't be displayed in your website
+1. ダッシュボードにプロジェクトが表示されなくなります。
+2. このプロジェクトのIDを使ったコメントウィジェットがウェブサイトに表示されなくなります。

@@ -1,27 +1,18 @@
-- **Introduction**
-  - [About](/)
-  - [Awesome Cusdis](awesome.md)
-- **Self-host Guide**
+- **はじめに**
+  - [このサイトについて](/)
+  - [素晴らしいCusdis](awesome.md)
+- **セルフホストガイド**
   - [Docker](/self-host/docker.md)
-  - [Railway](/self-host/railway.md)
   - [Vercel](/self-host/vercel.md)
-  - [Manually Install](/self-host/manual.md)
-- **Integration**
-  - [JS SDK Reference](/advanced/sdk.md)
-  - [React](https://github.com/Cusdis/sdk/tree/master/packages/react-cusdis)
-  - [Vue](https://github.com/2nthony/vue-cusdis)
-  - [Docsify](/integration/docsify.md)
-  - [Jekyll](/integration/jekyll.md)
-  - [Hugo](https://discourse.gohugo.io/t/free-and-open-source-comments-for-hugo/32940)
-  - [Hexo](https://blog.cusdis.com/integate-cusdis-in-hexo)
-  - [Mkdocs](/integration/mkdocs.md)
-  - [Publii](/integration/publii.md)
-- **Features**
-  - [Moderation](/features/moderation.md)
-  - [Email Notification](/features/notification.md)
-- **Advanced**
+  - [手動インストール](/self-host/manual.md)
+- **統合**
+  - [JavaScript SDK リファレンス](/advanced/sdk.md)
+- **特徴**
+  - [モデレーション](/features/moderation.md)
+  - [メール通知](/features/notification.md)
+- **詳細**
   - [Webhook](/advanced/webhook.md)
-  - [Show comment count](/advanced/show-comment-count.md)
+  - [コメント数の表示](/advanced/show-comment-count.md)
   - [i18n](/advanced/i18n.md)
-- [**Contributing Guide**](/contributing.md)
-- [**FAQ**](/faq.md)
+- [**貢献ガイド**](/contributing.md)
+- [**よくある質問**](/faq.md)

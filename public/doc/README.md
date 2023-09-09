@@ -1,47 +1,47 @@
 # Cusdis
 
-Open-source, lightweight (~5kb gzipped), privacy-friendly alternative to Disqus.
+オープンソースで軽量(~5kb gzip)、プライバシーに配慮したDisqusの代替。
 
 
-## Features
+## 特徴
 
-- Universal embed code
-  - You can embed Cusdis on every website.
-- Light-weight sdk
-  - The SDK that embed to your website is only 5kb (gzipped). Compared to Disqus (which is 24kb gzipped), it's very light-weight.
-- Email notification
-- One-click import data from Disqus
-- Moderation dashboard
-  - Since we don't require user sign in to comment, all comments are NOT displayed by default, until the moderator approve it. We provide a moderation dashboard for it.
+- ユニバーサル埋め込みコード
+  - あらゆるウェブサイトにCusdisを埋め込むことができます。
+- 軽量SDK
+  - ウェブサイトに埋め込むSDKはわずか5KBです。Disqus(24KB)に比べ、非常に軽量です。
+- メール通知
+- Disqusからワンクリックでデータをインポート
+- モデレーションダッシュボード
+  - Disqusはコメントするのにサインインを必要としないため、デフォルトではモデレーターが承認するまですべてのコメントは表示されません。そのためにモデレーションダッシュボードを提供しています。
 
-There are two ways to use Cusdis:
+Cusdisを使用するには2つの方法があります：
 
-## Self host
+## セルフホスト
 
-_Pros: You own your data_
+長所 自分のデータは自分で管理する。
 
-You can install Cusdis on your own server, just follow this [installation guide](/self-host/vercel.md)
+この[インストールガイド](/self-host/vercel.md)に従うだけで、Cusdisを自分のサーバーにインストールすることができます。
 
-## Hosted service
+## ホスティングサービス
 
-_Pros: Easy to use_
+長所 使いやすい。
 
-You can also use our [hosted service](https://cusdis.com/dashboard). We host our service on [Vercel](https://vercel.com), the data is stored on a PostgreSQL database.
+私たちの[ホスティングサービス](https://cusdis.com/dashboard)を利用することもできます。私たちのサービスは[Vercel](https://vercel.com)上でホストされており、データはPostgreSQLデータベースに保存されます。
 
-## Compared to Disqus
+## Disqusとの比較
 
-Cusdis is not designed for a FULLY alternative to Disqus, it's aim to implement a minimist embed comment tool for small sites (like your static blog). 
+CusdisはDisqusの完全な代替として設計されているわけではなく、小規模なサイト(静的なブログなど)のための最小限の埋め込みコメントツールを実装することを目的としています。
 
-Below are the pros and cons of Cusdis:
+以下はCusdisの長所と短所です:
 
-### Pros
+### 長所
 
-- Cusdis is open-source and self-hostable, you own your data.
-- The SDK is lightweight (~5kb gzipped)
-- Cusdis doesn't required commenter to sign in. We don't use cookies at all.
+- Cusdisはオープンソースでセルフホスティングが可能です。
+- SDKは軽量です。
+- Cusdisはコメント投稿者がサインインする必要がありません。クッキーを一切使用していません。
 
-### Cons
+### 短所
 
-- Cusdis is on early development stage
-- You have to manually moderate comments which are not display by default until you approve it, since we dont't have a spam filter.
-- Disqus is a company, we aren't.
+- Cusdisは初期の開発段階にあります。
+- スパムフィルターがないため、デフォルトでは承認するまで表示されないコメントを手動で調整する必要があります。
+- Disqusは会社ですが、私たちは会社ではありません。

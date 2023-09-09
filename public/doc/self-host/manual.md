@@ -1,13 +1,13 @@
-# Manual Install
+# 手動インストール
 
-Make sure you have Node.js and yarn installed on your system, and clone the repository
+システムにNode.jsとyarnがインストールされていることを確認し、リポジトリをクローンする
 
 ```bash
 $ git clone https://github.com/djyde/cusdis.git
 $ cd cusdis
 $ yarn install
 ```
-Put a `.env` file under the project root with the environment variable settings, here is an example:
+プロジェクトのルート下に、環境変数の設定を記述した`.env`ファイルを置きます。
 
 ```
 USERNAME=admin
@@ -19,14 +19,16 @@ DB_TYPE=sqlite
 DB_URL=file:./data.db
 ```
 
-Then build the application and run:
+その後、アプリケーションをビルドして実行します。
 
 ```bash
 $ yarn run build:without-migrate
 $ yarn run start:with-migrate
 ```
 
-Now the application should be running on `3000` port, you can visit it via `http://localhost:3000`. You may need Nginx to serve the application, here is an example of Nginx config:
+これでアプリケーションは`3000`ポートで動作するようになり、`http://localhost:3000`からアクセスできるようになります。
+
+アプリケーションを提供するにはNginxが必要かもしれません。
 
 ```nginx
 ...

@@ -1,8 +1,10 @@
+# JavaScript SDK
+
 # JS SDK
 
-Understand how the JS SDK works help you integrate Cusdis to an existed system. 
+JavaScript SDKの仕組みを理解することで、既存のシステムにCusdisを統合することができます。
 
-To embed the comment widget to your web page, you need to put **the element and JS SDK** on the page, at the position where you want to embed to:
+コメントウィジェットをウェブページに埋め込むには、埋め込みたい位置に**要素とJavaScript SDK**を置く必要があります：
 
 ```html
 <div id="cusdis_thread"
@@ -15,38 +17,38 @@ To embed the comment widget to your web page, you need to put **the element and 
 <script async src="https://cusdis.com/js/cusdis.es.js"></script>
 ```
 
-> If you are using self-hosted Cusdis, remember changing the `data-host` and the host in `<script>` to your own domain
+> もしセルフホストのCusdisを使用しているのであれば、`<script>`内の`data-host とホストを自分のドメインに変更してください。
 
-## How it Works
+## 動作方法
 
-1. The SDK will find the element with id `cusdis_thread`, then mount the widget on it.
-2. The SDK request the comments for the page with id `data-page-id`, in the website with id (`data-app-id`)
-3. When user post a comment, the SDK send a POST request to the API server with the attributes.
+1. SDKはid`cusdis_thread`の要素を見つけ、そこにウィジェットをマウントします。
+2. SDKはウェブサイトのid(`data-app-id`)で、id`data-page-id`のページのコメントを要求します。
+3. ユーザーがコメントを投稿すると、SDKはAPIサーバーにPOSTリクエストを送信します。
 
-## Attributes Reference
+## 属性の参照
 
-- `data-host` **(required)** API server host.
-- `data-app-id` **(required)** The website ID.
-- `data-page-id` **(required)** Current page ID. Used to identity your page. Should be unique in a website. Such as page slug, permalink.
-- `data-page-url` Current page URL. Used to display on dashboard.
-- `data-page-title` Current page title. Used to display on dashboard.
+- `data-host` **(必須)** APIサーバーホスト
+- `data-app-id` **(必須)** ウェブサイトID
+- `data-page-id` **(必須)** 現在のページ ID(ページを識別するために使用されます。ページのスラッグやパーマリンクなどを使用してウェブサイト内で一意である必要があります。)
+- `data-page-url` 現在のページのURL(ダッシュボードに表示されます)
+- `data-page-title` 現在のページのタイトル(ダッシュボードに表示される)
 - `data-theme`
-  - `light` (default)
-  - `auto` Automatically set theme by `prefers-color-scheme`
+  - `light` (デフォルト)
+  - `auto` `prefers-color-scheme`によって自動的にテーマを設定する。
   - `dark`
 
 ## API
 
-Cusdis exposes some global APIs on `window.CUSDIS`:
+CusdisはいくつかのグローバルAPIを`window.CUSDIS`で公開しています：
 
 #### window.CUSDIS.initial()
 
-Initialize widget.
+ウィジェットを初期化します。
 
 #### window.CUSDIS.renderTo(target: HTMLElement)
 
-Render widget to specific DOM element.
+ウィジェットを特定のDOM要素にレンダリングします。
 
 #### window.CUSDIS.setTheme(theme: 'dark' | 'light' | 'auto')
 
-Manually set theme. 
+手動でテーマを設定します。
