@@ -91,8 +91,8 @@ function ApprovePage(props: {
           </Title>
 
           <Stack spacing={4}>
-            <Text>New comment on site <strong>{props.comment.page.project.title}</strong>, page <Anchor weight={'bold'} target="_blank" href={props.comment.page.url}>{props.comment.page.title || props.comment.page.slug}</Anchor></Text>
-            <Text>From: <strong>{props.comment.by_nickname}</strong> ({props.comment.by_email || 'Email not provided'})</Text>
+            <Text><strong>{props.comment.page.project.title}</strong> の <Anchor weight={'bold'} target="_blank" href={props.comment.page.url}>{props.comment.page.title || props.comment.page.slug}</Anchor>ページに新しいコメントが投稿されました</Text>
+            <Text>送信者: <strong>{props.comment.by_nickname}</strong> ({props.comment.by_email || 'Email not provided'})</Text>
             <Text sx={theme =>({
               whiteSpace: 'pre-wrap',
               backgroundColor: theme.colors.gray[0],
@@ -115,7 +115,7 @@ function ApprovePage(props: {
           <Divider my={24} />
 
           <Stack>
-            <Textarea placeholder="Your comment..." value={replyContent} onChange={e => setReplyContent(e.target.value)}></Textarea>
+            <Textarea placeholder="あなたのコメント" value={replyContent} onChange={e => setReplyContent(e.target.value)}></Textarea>
             <Text size="sm" color="gray">* コメントへの返信を追加すると、コメントは自動的に承認されます。</Text>
 
             <Button onClick={_ => {

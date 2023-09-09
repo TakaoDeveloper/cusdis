@@ -153,7 +153,7 @@ export function makeConfirmReplyNotificationTemplate(data: {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="38f1c471-cddc-4db0-b03e-7a92cda48c5d" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 30px"><strong>Please confirm notification</strong></span></div><div></div></div></td>
+        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 30px"><strong>通知を確認してください</strong></span></div><div></div></div></td>
       </tr>
     </tbody>
   </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="a2242cde-235a-4335-8eec-7a08e2938a97">
@@ -164,7 +164,7 @@ export function makeConfirmReplyNotificationTemplate(data: {
               <tbody>
                 <tr>
                 <td align="center" bgcolor="#333333" class="inner-td" style="border-radius:6px; font-size:16px; text-align:left; background-color:inherit;">
-                  <a href="{{confirm_url}}" style="background-color:#333333; border:1px solid #333333; border-color:#333333; border-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">Yes, notify me when I have reply</a>
+                  <a href="{{confirm_url}}" style="background-color:#333333; border:1px solid #333333; border-color:#333333; border-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">はい、返信があったら知らせてください</a>
                 </td>
                 </tr>
               </tbody>
@@ -175,9 +175,9 @@ export function makeConfirmReplyNotificationTemplate(data: {
     </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="eb3e0978-a51b-4471-84d6-c8f75a9ad378" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">You receive this email is because you checked "notify me" when added a comment on {{page_slug}}.</div>
+        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">このメールを受信したのは、コメントを追加した際に「通知する」にチェックを入れたためです。 {{page_slug}}.</div>
 <div style="font-family: inherit; text-align: inherit"><br></div>
-<div style="font-family: inherit; text-align: inherit">We only send email when you have new reply. You can unsubscribe anytime through an unsubscribe link on the notification email.</div><div></div></div></td>
+<div style="font-family: inherit; text-align: inherit">新しい返信があった場合のみメールを送信します。配信停止は、通知メールにある配信停止リンクからいつでも行うことができます。</div><div></div></div></td>
       </tr>
     </tbody>
   </table></td>

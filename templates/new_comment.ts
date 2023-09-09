@@ -157,7 +157,7 @@ export function makeNewCommentEmailTemplate(data: {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="52e3ced4-77a7-44c5-8b24-464c80574b80" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">{{by_nickname}} comments in page "{{page_slug}}"</div><div></div></div></td>
+        <td style="padding:18px 0px 18px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">{{by_nickname}} から"{{page_slug}}"にコメントが投稿されました</div><div></div></div></td>
       </tr>
     </tbody>
   </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="d95c7472-e3dc-4a9b-845a-b1b746f06254">
@@ -216,7 +216,7 @@ export function makeNewCommentEmailTemplate(data: {
               <tbody>
                 <tr>
                 <td align="center" bgcolor="#3f72af" class="inner-td" style="border-radius:6px; font-size:16px; text-align:left; background-color:inherit;">
-                  <a href="{{approve_link}}" style="background-color:#3f72af; border:1px solid #333333; border-color:#333333; border-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font-size:12px; font-weight:bold; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid; font-family:verdana,geneva,sans-serif;" target="_blank">Approve/Reply without login</a>
+                  <a href="{{approve_link}}" style="background-color:#3f72af; border:1px solid #333333; border-color:#333333; border-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font-size:12px; font-weight:bold; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid; font-family:verdana,geneva,sans-serif;" target="_blank">ログインせずに承認/返信</a>
                 </td>
                 </tr>
               </tbody>
@@ -224,12 +224,6 @@ export function makeNewCommentEmailTemplate(data: {
           </td>
         </tr>
       </tbody>
-    </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c47cdebf-a257-40e5-bf74-cd479dc48c83" data-mc-module-version="2019-10-22">
-    <tbody>
-      <tr>
-        <td style="padding:4px 0px 4px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 10px">Thanks for using </span><a href="https://cusdis.com"><span style="font-size: 10px">Cusdis</span></a><span style="font-size: 10px">.</span></div><div></div></div></td>
-      </tr>
-    </tbody>
   </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="8cf75138-7baa-421b-93d4-ccc3c7f324dd">
     <tbody>
       <tr>
@@ -240,28 +234,14 @@ export function makeNewCommentEmailTemplate(data: {
   </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="47bae5ca-2fa9-4d97-822f-200c585eea52" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:4px 0px 4px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><a href="{{unsubscribe_link}}"><span style="font-size: 10px">Unsubscribe</span></a><span style="font-size: 10px"> if you don't want to receive new comment notification.</span></div>
-<div style="font-family: inherit; text-align: inherit"><a href="{{notification_preferences_link}}"><span style="font-size: 10px">Notification preferences</span></a></div><div></div></div></td>
+        <td style="padding:4px 0px 4px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 10px">新着コメント通知を受け取りたくない場合は</span><a href="{{unsubscribe_link}}"><span style="font-size: 10px">こちら</span></a></div>
+<div style="font-family: inherit; text-align: inherit"><a href="{{notification_preferences_link}}"><span style="font-size: 10px">通知設定</span></a></div><div></div></div></td>
       </tr>
     </tbody>
   </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="6a647f02-d41f-4976-94b0-abeb239d8b88">
     <tbody>
       <tr>
         <td style="padding:0px 0px 30px 0px;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="social" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="92e6a93d-a671-4afd-a0b8-d8c81537e258">
-    <tbody>
-      <tr>
-        <td valign="top" style="padding:0px 0px 0px 0px; font-size:6px; line-height:10px;" align="left">
-          <table align="left" style="-webkit-margin-start:auto;-webkit-margin-end:auto;">
-            <tbody><tr align="left"><td style="padding: 0px 5px;" class="social-icon-column">
-      <a role="social-icon-link" href="https://twitter.com/cusdis_hq" target="_blank" alt="Twitter" title="Twitter" style="display:inline-block; background-color:#7AC4F7; height:21px; width:21px;">
-        <img role="social-icon" alt="Twitter" title="Twitter" src="https://mc.sendgrid.com/assets/social/white/twitter.png" style="height:21px; width:21px;" height="21" width="21">
-      </a>
-    </td></tr></tbody>
-          </table>
         </td>
       </tr>
     </tbody>

@@ -58,7 +58,7 @@ function GettingStart() {
 
   return (
     <>
-      <Head title="Add new site - Cusdis" />
+      <Head title="新しいサイトを追加 - Cusdis" />
       <Container mt={120}>
 
         <Stack>
@@ -66,22 +66,22 @@ function GettingStart() {
           </Image>
           <Stack spacing={4}>
             <Title order={2} weight={500}>
-              Let's create a new site
+              新しいサイトを作りましょう
             </Title>
             <Text color="gray">
-              Give your site a name, and you can start using Cusdis.
+              あなたのサイトに名前をつければ、Cusdisを使い始めることができます。
             </Text>
           </Stack>
 
           <Stack spacing={8}>
             <Text>
-              Site name
+              サイト名
             </Text>
-            <TextInput placeholder="My personal blog" ref={titleInputRef} />
+            <TextInput placeholder="私の個人的なブログ" ref={titleInputRef} />
           </Stack>
 
           <Box>
-            <Button onClick={_ => void onClickCreateProject()} loading={createProjectMutation.isLoading} color="blue">Create</Button>
+            <Button onClick={_ => void onClickCreateProject()} loading={createProjectMutation.isLoading} color="blue">作成</Button>
           </Box>
         </Stack>
       </Container>

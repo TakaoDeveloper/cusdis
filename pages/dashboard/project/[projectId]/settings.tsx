@@ -162,18 +162,18 @@ export default function Page(props: {
             <Stack>
               <Group>
                 <Text className={listClasses.label}>
-                  Danger zone
+                  危険地帯
                 </Text>
               </Group>
               <Box>
                 <Stack align={'start'}>
                   <Button onClick={_ => {
-                    if (window.confirm("Are you sure you want to delete this site?")) {
+                    if (window.confirm("本当にこのサイトを削除しますか？")) {
                       deleteProjectMutation.mutate({
                         projectId
                       })
                     }
-                  }} loading={deleteProjectMutation.isLoading} color="red">Delete site</Button>
+                  }} loading={deleteProjectMutation.isLoading} color="red">サイトを削除</Button>
                 </Stack>
               </Box>
             </Stack>
