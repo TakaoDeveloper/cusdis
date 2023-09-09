@@ -102,7 +102,7 @@ function IndexPage({ session }: Props) {
               fontWeight: 800,
               margin: 0
             })}>
-              A <Text variant={'gradient'} gradient={{ from: "blue", to: "cyan" }} component="span" inherit>lightweight, privacy-first, open-source</Text> comment system
+              <Text variant={'gradient'} gradient={{ from: "blue", to: "cyan" }} component="span" inherit>軽量で、プライバシー重視の、オープンソースの</Text>コメントシステム
               {/* <Text>for your blog</Text> */}
             </Box>
             <Text color="gray">
@@ -192,33 +192,8 @@ function IndexPage({ session }: Props) {
             </Grid.Col>
 
           </Grid>
-
-          <Title order={1} align='center' my={96}>
-            フレームワークやプラットフォームと簡単に統合
-          </Title>
         </Stack>
       </Container>
-
-      <Stack mt={48} sx={theme => ({
-        boxShadow: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
-        backgroundColor: theme.colors.gray[0],
-        paddingTop: 80
-      })}>
-        <Grid gutter={'xl'}>
-          {integrations.map(item => {
-            return (
-              <Grid.Col mb={48} key={item.label} span={2}>
-                <Stack align={'center'} justify='space-between'>
-                  <Anchor href={item.link}>
-                    <Image src={item.image} width={item.imageWidth} />
-                  </Anchor>
-                </Stack>
-              </Grid.Col>
-            )
-          })}
-        </Grid>
-
-      </Stack>
 
       <Box>
         <Title id="pricing" order={1} align='center' my={96}>価格</Title>

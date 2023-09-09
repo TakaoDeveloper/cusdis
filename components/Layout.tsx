@@ -79,15 +79,15 @@ export function MainLayout(props: {
   const updateNewCommentNotification = useMutation(updateUserSettings, {
     onSuccess() {
       notifications.show({
-        title: 'Success',
-        message: 'User settings updated',
+        title: '成功',
+        message: 'ユーザー設定が更新されました',
         color: 'green'
       })
     },
     onError() {
       notifications.show({
-        title: 'Error',
-        message: 'Something went wrong',
+        title: 'エラー',
+        message: '問題が発生しました',
         color: 'red'
       })
     }
@@ -95,15 +95,15 @@ export function MainLayout(props: {
   const updateUserSettingsMutation = useMutation(updateUserSettings, {
     onSuccess() {
       notifications.show({
-        title: 'Success',
-        message: 'User settings updated',
+        title: '成功',
+        message: 'ユーザー設定が更新されました',
         color: 'green'
       })
     },
     onError() {
       notifications.show({
-        title: 'Error',
-        message: 'Something went wrong',
+        title: 'エラー',
+        message: '問題が発生しました',
         color: 'red'
       })
     }
@@ -113,8 +113,8 @@ export function MainLayout(props: {
     const data = userSettingsForm.getValues()
     if (!validateEmail(data.notificationEmail)) {
       notifications.show({
-        title: 'Invalid email',
-        message: 'Please enter a valid email address',
+        title: 'メールアドレスが無効です',
+        message: '有効なメールアドレスを入力してください',
         color: 'red'
       })
       return
@@ -173,14 +173,14 @@ export function MainLayout(props: {
       <Stack>
         <Stack spacing={8} p="sm">
           <Link href={`/dashboard/project/${projectId}`} style={{ textDecoration: 'none' }}>
-            <NavLink active={props.id === "comments"} styles={styles} label="Comments" icon={<AiOutlineComment />}>
+            <NavLink active={props.id === "comments"} styles={styles} label="コメント" icon={<AiOutlineComment />}>
             </NavLink>
           </Link>
           <Link href={`/dashboard/project/${projectId}/settings`} style={{ textDecoration: 'none' }}>
-            <NavLink active={props.id === 'settings'} styles={styles} label="Site settings" icon={<AiOutlineSetting />}>
+            <NavLink active={props.id === 'settings'} styles={styles} label="サイト設定" icon={<AiOutlineSetting />}>
             </NavLink>
           </Link>
-          <NavLink component="a" href="/doc" target={'_blank'} label="Documentation" icon={<AiOutlineFileText />}>
+          <NavLink component="a" href="/doc" target={'_blank'} label="ドキュメント" icon={<AiOutlineFileText />}>
           </NavLink>
         </Stack>
 
@@ -200,17 +200,17 @@ export function MainLayout(props: {
 `
 
     modals.openConfirmModal({
-      title: "Embeded Code",
+      title: "埋め込みコード",
       closeOnConfirm: false,
       labels: {
-        cancel: 'Cancel',
-        confirm: 'Copy'
+        cancel: 'キャンセル',
+        confirm: 'コピー'
       },
       onConfirm() {
         clipboard.copy(code)
         notifications.show({
-          title: 'Copy',
-          message: 'copied'
+          title: 'コピー',
+          message: 'コピーされました'
         })
       },
       children: (
@@ -221,7 +221,7 @@ export function MainLayout(props: {
           <Anchor size="sm" href="/doc#/advanced/sdk" target={'_blank'}>
             <Group spacing={4} align='center'>
               <AiOutlineQuestionCircle />
-              Learn more
+              さらに詳しく
             </Group>
           </Anchor>
         </Stack>
@@ -231,13 +231,13 @@ export function MainLayout(props: {
 
   const badge = React.useMemo(() => {
     if (props.subscription.isActived) {
-      return <Badge color="green" size="xs">PRO</Badge>
+      return <Badge color="green" size="xs">プロ</Badge>
     }
 
     if (!props.config.isHosted) {
       return <Badge color="gray" size="xs">OSS</Badge>
     }
-    return <Badge color="green" size="xs">FREE</Badge>
+    return <Badge color="green" size="xs">無料</Badge>
   }, [])
 
   const header = React.useMemo(() => {
@@ -259,7 +259,7 @@ export function MainLayout(props: {
             // height: '100%'
           }}>
             <Button leftIcon={<AiOutlineCode />} onClick={openEmbededCodeModal} size="xs" variant={'outline'}>
-              Embeded code
+              埋め込みコード
             </Button>
           </Group>
         </Group>
@@ -276,24 +276,24 @@ export function MainLayout(props: {
     return (
       <>
         <Text size="sm" weight={900}>
-          Usage (per month)
+          (per month)使用中
         </Text>
         <Stack spacing={4}>
           <Group spacing={4}>
-            <Text weight={500} size="sm">Sites:</Text>
+            <Text weight={500} size="sm">サイト:</Text>
             <Text size='sm'>
               {`${props.usage.projectCount} / ${usageLimitation['create_site']}`}
             </Text>
           </Group>
           
           <Group spacing={4}>
-            <Text weight={500} size="sm">Approve comments:</Text>
+            <Text weight={500} size="sm">承認されたコメント:</Text>
             <Text size='sm'>
               {`${props.usage.approveCommentUsage} / ${usageLimitation['approve_comment']}`}
             </Text>
           </Group>
           <Group spacing={4}>
-            <Text weight={500} size="sm">Quick Approve:</Text>
+            <Text weight={500} size="sm">クイック承認:</Text>
             <Text size='sm'>
               {`${props.usage.quickApproveUsage} / ${usageLimitation['quick_approve']}`}
             </Text>
@@ -329,19 +329,19 @@ export function MainLayout(props: {
         }}
       >
         <Modal opened={isUserPannelOpen} size="lg" onClose={closeUserModal}
-          title="User Settings"
+          title="ユーザー設定"
         >
           <Stack>
             <Stack spacing={8}>
-              <Text weight={500} size="sm">Username</Text>
+              <Text weight={500} size="sm">ユーザー名</Text>
               <TextInput defaultValue={props.userInfo.name} size="sm" disabled />
             </Stack>
             <Stack spacing={8}>
-              <Text weight={500} size="sm">Email (for login)</Text>
+              <Text weight={500} size="sm">メールアドレス (ログイン用)</Text>
               <TextInput defaultValue={props.userInfo.email} size="sm" disabled />
             </Stack>
             <Stack spacing={8}>
-              <Text weight={500} size="sm">Email (for notification)</Text>
+              <Text weight={500} size="sm">メールアドレス (通知用)</Text>
               <TextInput placeholder={props.userInfo.email} {...userSettingsForm.register("notificationEmail")} size="sm" />
               <Switch defaultChecked={props.userInfo.enableNewCommentNotification} onChange={e => {
                 updateNewCommentNotification.mutate({
@@ -350,14 +350,14 @@ export function MainLayout(props: {
               }} label="Enable notification" />
             </Stack>
             <Stack spacing={8}>
-              <Text weight={500} size="sm">Display name</Text>
+              <Text weight={500} size="sm">表示名</Text>
               <TextInput placeholder={props.userInfo.name} {...userSettingsForm.register("displayName")} size="sm" />
             </Stack>
             {props.config.checkout.enabled && (
               <>
                 {usageBoard}
                 <Stack spacing={8}>
-                  <Text weight={900} size="sm">Subscription </Text>
+                  <Text weight={900} size="sm">サブスクリプション </Text>
                   <Grid>
                     <Grid.Col span={6}>
                       <Paper sx={theme => ({
@@ -366,28 +366,28 @@ export function MainLayout(props: {
                       })}>
                         <Stack>
                           <Title order={4}>
-                            Free
+                            無料
                           </Title>
                           <List size='sm' sx={{
                           }}>
                             <List.Item>
-                              Up to 1 site
+                              最大1サイトまで
                             </List.Item>
                             <List.Item>
-                              10 Quick Approve / month
+                              10件のクイック承認/月
                             </List.Item>
                             <List.Item>
-                              100 approved comments / month
+                              100件のコメント承認/月
                             </List.Item>
                           </List>
                           {!props.subscription.isActived || props.subscription.status === 'cancelled' ? (
-                            <Button disabled size="xs">Current plan</Button>
+                            <Button disabled size="xs">現在のプラン</Button>
                           ) : (
                             <Button size="xs" variant={'outline'} loading={downgradePlanMutation.isLoading} onClick={_ => {
-                              if (window.confirm('Are you sure to downgrade?')) {
+                              if (window.confirm('本当にダウングレードしますか？')) {
                                 downgradePlanMutation.mutate()
                               }
-                            }}>Downgrade</Button>
+                            }}>ダウングレード</Button>
                           )}
                         </Stack>
                       </Paper>
@@ -399,27 +399,27 @@ export function MainLayout(props: {
                       })}>
                         <Stack>
                           <Title order={4}>
-                            Pro
+                            プロ
                           </Title>
                           <List size='sm' sx={{
                           }}>
                             <List.Item>
-                              Unlimited sites
+                              無制限のサイト
                             </List.Item>
                             <List.Item>
-                              Unlimited Quick Approve
+                              無制限のクイック承認
                             </List.Item>
                             <List.Item>
-                              Unlimited approved comments
+                              無制限のコメント承認
                             </List.Item>
                           </List>
                           {props.subscription.isActived ? (
                             <>
-                              <Button size="xs" component="a" href={props.subscription.updatePaymentMethodUrl}>Manage payment method</Button>
-                              {props.subscription.status === 'cancelled' && (<Text size='xs' align='center'>Expire on {dayjs(props.subscription.endAt).format('YYYY/MM/DD')}</Text>)}
+                              <Button size="xs" component="a" href={props.subscription.updatePaymentMethodUrl}>支払方法の管理</Button>
+                              {props.subscription.status === 'cancelled' && (<Text size='xs' align='center'>有効期限 {dayjs(props.subscription.endAt).format('YYYY/MM/DD')}</Text>)}
                             </>
                           ) : (
-                            <Button size='xs' component="a" href={`${props.config.checkout.url}?checkout[custom][user_id]=${props.session.uid}`}>Upgrade $5/month</Button>
+                            <Button size='xs' component="a" href={`${props.config.checkout.url}?checkout[custom][user_id]=${props.session.uid}`}>アップグレード $5/月</Button>
                           )}
                         </Stack>
                       </Paper>
@@ -428,9 +428,9 @@ export function MainLayout(props: {
                 </Stack>
               </>
             )}
-            <Button loading={updateUserSettingsMutation.isLoading} onClick={onClickSaveUserSettings}>Save</Button>
+            <Button loading={updateUserSettingsMutation.isLoading} onClick={onClickSaveUserSettings}>保存</Button>
             <Button onClick={_ => signOut()} variant={'outline'} color='red'>
-              Logout
+              ログアウト
             </Button>
           </Stack>
         </Modal>
