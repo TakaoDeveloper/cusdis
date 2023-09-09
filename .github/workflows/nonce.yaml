@@ -30,6 +30,3 @@ jobs:
           git add .
           git commit -m "auto push from ci" || echo no commits
           git push
-
-
-          window.CUSDIS = {}
