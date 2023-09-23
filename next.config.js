@@ -1,4 +1,4 @@
-export const fetchCache = 'force-no-store';
+const fetchCache = 'force-no-store';
 module.exports = {
   rewrites() {
     return [
