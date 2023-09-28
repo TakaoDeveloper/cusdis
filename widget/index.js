@@ -10,7 +10,7 @@ const makeIframeContent = (target) => {
     <link rel="stylesheet" href="${cssPath}">
     <base target="_parent" />
     <link>
-    <script nonce="a40e48eba5ec2763c77be576541ebdcbecddbe7e97beb1919f1a1f65a650d087">
+    <script nonce="1a0b35a062e3983fb4ff3fcc01cf3a645c8e840fb3baecf4820f6a77f08449f2">
       window.CUSDIS_LOCALE = ${JSON.stringify(window.CUSDIS_LOCALE)}
       window.__DATA__ = ${JSON.stringify(target.dataset)}
     </script>
@@ -22,7 +22,7 @@ const makeIframeContent = (target) => {
   </head>
   <body>
     <div id="root"></div>
-    <script nonce="a40e48eba5ec2763c77be576541ebdcbecddbe7e97beb1919f1a1f65a650d087" src="${iframeJsPath}" type="module">
+    <script nonce="1a0b35a062e3983fb4ff3fcc01cf3a645c8e840fb3baecf4820f6a77f08449f2" src="${iframeJsPath}" type="module">
 
     </script>
   </body>
